@@ -14,6 +14,7 @@ RUN groupadd -g 1005 appuser && \
     useradd -r -u 1005 -g appuser appuser
 # ensure smb stuff works correctly
 RUN mkdir -p /var/cache/samba && chmod 0755 /var/cache/samba && chown appuser /var/cache/samba && chown appuser /var/lib/samba/private
+RUN mkdir -p /var/lib/backups && chmod 0755 /var/lib/backups && chown appuser /var/lib/backups
 USER appuser
 
 # install the entrypoint
